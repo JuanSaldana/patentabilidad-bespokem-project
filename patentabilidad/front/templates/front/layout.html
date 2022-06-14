@@ -3,14 +3,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{% block title %}Mail{% endblock %}</title>
+    <title>{% block title %}Inteligencia Tecnologica{% endblock %}</title>
+    <!--
+      Insert favicon!
+    -->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" />
+    <link href="{% static 'front/styles.css' %}" rel="stylesheet" />
     <script
       src="https://unpkg.com/react@17/umd/react.production.min.js"
       crossorigin
@@ -23,6 +26,17 @@
     {% block script %} {% endblock %}
   </head>
   <body>
+    <nav class="navbar bg-light" id="main-header">
+      <a class="navbar-brand" href="#"> Bespokem </a>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#"> {{request.user}} </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"> Reports </a>
+        </li>
+      </ul>
+    </nav>
     <!--
         Header layout with navbar:
             - Profile

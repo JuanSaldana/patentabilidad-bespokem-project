@@ -1,1 +1,12 @@
-﻿
+﻿#main-header {
+    padding-left: 20 ;
+    justify-content: left;
+}
+
+.nav-link {
+    color: rgb(166, 166, 166);
+}
+
+#subheader {
+    justify-content: left;
+}
