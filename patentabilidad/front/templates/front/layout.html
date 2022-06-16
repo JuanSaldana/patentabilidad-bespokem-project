@@ -30,6 +30,7 @@
       <a class="navbar-brand" href="#">
         <img src="{% static "front/icons/full_logo.jpeg"%}" style="width: 200px;"></img>
       </a>
+      {% if request.user.is_authenticated %}
       <ul class="nav">
         <li class="nav-item">
           <a class="nav-link" href="#"> {{request.user}} </a>
@@ -38,6 +39,7 @@
           <a class="nav-link" href="#"> Reports </a>
         </li>
       </ul>
+      {%endif%}
     </nav>
     <!--
         Header layout with navbar:

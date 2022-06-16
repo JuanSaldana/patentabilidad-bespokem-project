@@ -1,6 +1,7 @@
 ﻿#main-header {
-    padding-left: 20 ;
+    padding-left: 20px;
     justify-content: left;
+    margin-bottom: 20px;
 }
 
 .nav-link {
