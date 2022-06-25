@@ -11,3 +11,32 @@
 #subheader {
     justify-content: left;
 }
+
+#query-form {
+    display:flex;
+}
+
+#patents-papers {
+    padding-top: 10px;
+}
+
+#search-input-div{
+    width:100%;
+    margin-right: 5px;
+}
+
+#query-input {
+    height: 70px;
+    border-radius: 3px;
+    flex-wrap: wrap;
+}
+
+#autocomplete-div {
+    justify-content: flex-start;
+}
+
+#suggestion-badge {
+    transform: scale(0.8);
+    border-radius: 20px;
+    font-style: normal;
+}

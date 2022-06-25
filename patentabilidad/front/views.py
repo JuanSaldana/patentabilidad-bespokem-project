@@ -38,3 +38,10 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("index"))
+
+def search(request):
+    # TODO: parse query in JS to have this format
+    query_input = request.POST["query_input"]
+    search_parameters = request.POST["search_parameters"]
+    # TODO: Do request to DBs
+    return HttpResponse(f"query input:{query_input}     search parameters:{search_parameters}")

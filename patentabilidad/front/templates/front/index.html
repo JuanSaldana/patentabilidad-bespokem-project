@@ -1,3 +1,53 @@
-﻿{% extends "front/layout.html" %} {% block body %}
-<h1>Hello, authenticated user :)</h1>
+﻿{% extends "front/layout.html" %} {% load static%} {% block body %}
+<!-- 
+    Search bar
+-->
+<div id="search-bar">
+  <form id="query-form" action="{% url "search" %}" method="POST">
+    {% csrf_token %}
+    <div id="search-input-div" type="container-row">
+      <div type="container-tiem">
+        <input
+          type="text"
+          class="form-control"
+          name="query_input"
+          id="query-input"
+          placeholder="Type query"
+        ></input>
+      </div>
+    <!-- Chip section -->
+    <div id="autocomplete-div" type="container-item">
+    </div>
+  </div>
+    <!-- Right section of component, submit button and checkboxes-->
+    <div type="container-row">
+      <button type="submit" class="btn btn-primary" id="query-submit">
+        Search
+      </button>
+      <!-- Checkboxes for patents and papers-->
+      <div id="patents-papers" type="container-item">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            name="patents"
+            id="patentsCheck"
+            checked
+          />
+          <label class="form-check-label" for="patentsCheck">Patents</label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            name="papers"
+            id="papersCheck"
+          />
+          <label class="form-check-label" for="papersCheck">Papers</label>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<script src="{% static "front/scripts/search.js"%}"></script>
 {% endblock %}
