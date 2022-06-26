@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 from django.contrib.auth.views import LoginView
 
+from .static.python.utils import parse_input
+
 
 # Create your views here.
 def index(request):
@@ -40,8 +42,9 @@ def logout_view(request):
     return HttpResponseRedirect(reverse("index"))
 
 def search(request):
-    # TODO: parse query in JS to have this format
-    query_input = request.POST["query_input"]
-    search_parameters = request.POST["search_parameters"]
+    request_dict = request.POST.dict()
+    # this is ok bc request_dict is a copy of original request.POST
+    del request_dict["csrfmiddlewaretoken"]
+    query_input, search_parameters = parse_input(request_dict)
     # TODO: Do request to DBs
     return HttpResponse(f"query input:{query_input}     search parameters:{search_parameters}")
