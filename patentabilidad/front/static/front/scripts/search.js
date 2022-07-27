@@ -17,6 +17,6 @@ function add_autosuggestions() {
   var autocomplete_div = document.querySelector("#autocomplete-div");
   search_suggestions.forEach((suggestion) => {
     autocomplete_div.innerHTML += `
-    <button type="button" class="btn btn-outline-primary btn-sm" id="suggestion-badge" value="${suggestion}" onclick="handle_suggestion_click">${suggestion}</button>`;
+    <button type="button" class="btn btn-outline-secondary btn-sm" id="suggestion-badge" value="${suggestion}" onclick="handle_suggestion_click">${suggestion}</button>`;
   });
 }
