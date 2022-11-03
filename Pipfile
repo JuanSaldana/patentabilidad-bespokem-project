@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "~=4.0"
 djangorestframework = "~=3.13"
+patentabilidad = {editable = true, git = "https://JuanSaldana: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@github.com/JuanSaldana/patentabilidad-bespokem.git"}
 
 [dev-packages]
 
